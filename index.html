@@ -117,7 +117,18 @@
 
     /* —— Vision —— */
     .vision {
-      background: linear-gradient(180deg, transparent, rgba(45, 90, 64, 0.06), transparent);
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 18%, rgba(168, 92, 110, 0.08), transparent 70%),
+        linear-gradient(180deg, transparent, rgba(45, 90, 64, 0.06), transparent);
+    }
+
+    .vision__emblem {
+      display: block;
+      width: min(220px, 52vw);
+      height: auto;
+      margin: 0.25rem 0 1.35rem;
+      image-rendering: auto;
+      filter: drop-shadow(0 10px 24px rgba(80, 40, 50, 0.12));
     }
 
     .vision__stat {
@@ -465,6 +476,7 @@
       <div class="reveal">
         <p class="section__label">Vision</p>
         <h2 class="section__title">目指す姿</h2>
+        <img class="vision__emblem" src="assets/vision-87.png" alt="87 — 花と数字の装飾イラスト" width="142" height="142">
         <p class="vision__stat">1,000<span>店舗超</span></p>
         <div class="section__body">
           <p>毎月、多くの花を扱う店舗が全国に広がれば、業界は現状を維持しながら未来へ進むことができます。ただし維持だけでは世代交代も、新しい景色も見えません。</p>
