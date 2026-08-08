@@ -11,54 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    :root {
-      --green-deep: #163226;
-      --green-mid: #2d5a40;
-      --green-soft: #5a8f6c;
-      --green-mist: #d8e4da;
-      --ink: #1a2420;
-      --ink-soft: #4a5850;
-      --paper: #f3f6f2;
-      --paper-warm: #e7eee8;
-      --white: #fafcf9;
-      --cta: #1f6b45;
-      --cta-hover: #185536;
-      --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
-      --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
-      --max: 40rem;
-      --wide: 68rem;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(ellipse 80% 50% at 10% 0%, rgba(90, 143, 108, 0.12), transparent 55%),
-        radial-gradient(ellipse 60% 40% at 90% 20%, rgba(45, 90, 64, 0.08), transparent 50%),
-        linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 45%, var(--paper) 100%);
-      font-family: var(--font-body);
-      font-weight: 400;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-    }
-
     /* —— Hero —— */
     .hero {
       position: relative;
@@ -126,99 +80,6 @@
       opacity: 0;
       transform: translateY(1rem);
       animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
-    }
-
-    /* —— Buttons —— */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.95rem 1.6rem;
-      border-radius: 2px;
-      font-family: var(--font-body);
-      font-size: 0.98rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
-    }
-
-    .btn--primary {
-      background: var(--cta);
-      color: var(--white);
-    }
-
-    .btn--primary:hover {
-      background: var(--cta-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn--ghost {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      margin-left: 0.75rem;
-    }
-
-    .btn--ghost:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .btn--large {
-      padding: 1.15rem 2.2rem;
-      font-size: 1.05rem;
-    }
-
-    /* —— Sections —— */
-    .section {
-      width: min(100% - 2.5rem, var(--max));
-      margin: 0 auto;
-      padding: clamp(4rem, 10vw, 6.5rem) 0;
-    }
-
-    .section--wide {
-      width: min(100% - 2.5rem, var(--wide));
-    }
-
-    .section__label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--green-soft);
-      margin: 0 0 0.75rem;
-    }
-
-    .section__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.65rem, 4vw, 2.35rem);
-      font-weight: 600;
-      line-height: 1.45;
-      letter-spacing: 0.04em;
-      margin: 0 0 1.5rem;
-      color: var(--green-deep);
-    }
-
-    .section__body p {
-      margin: 0 0 1.15rem;
-      color: var(--ink-soft);
-      font-size: 1.02rem;
-    }
-
-    .section__body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(1.5rem);
-      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     /* —— Vision —— */
@@ -415,24 +276,6 @@
       color: var(--white);
     }
 
-    /* —— Footer —— */
-    footer {
-      padding: 2.5rem 1.25rem 3rem;
-      text-align: center;
-      color: var(--ink-soft);
-      font-size: 0.88rem;
-    }
-
-    footer a {
-      color: var(--green-mid);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    footer p {
-      margin: 0.35rem 0;
-    }
-
     @keyframes riseIn {
       to {
         opacity: 1;
@@ -452,8 +295,15 @@
     }
 
     @media (max-width: 560px) {
+      .hero__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
       .btn--ghost {
-        display: none;
+        margin-left: 0;
       }
 
       .flow {
@@ -461,10 +311,86 @@
       }
     }
 
+    .howto-steps {
+      list-style: none;
+      margin: 1.75rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+      counter-reset: howto;
+    }
+
+    .howto-steps li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem 1rem;
+      align-items: start;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--green-mist);
+      counter-increment: howto;
+    }
+
+    .howto-steps li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .howto-steps li::before {
+      content: counter(howto, decimal-leading-zero);
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-soft);
+      line-height: 1.4;
+    }
+
+    .howto-steps strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.2rem;
+    }
+
+    .howto-steps p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    .howto-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    .cta .btn--secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.55);
+      margin-left: 0.75rem;
+    }
+
+    .cta .btn--secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cta .btn--secondary {
+      margin-left: 0;
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
       .brand, .hero__lead, .hero__actions,
-      .reveal, .hero__media img, .cta .btn--primary {
+      .hero__media img, .cta .btn--primary {
         animation: none !important;
         transition: none !important;
         opacity: 1 !important;
@@ -484,8 +410,8 @@
       <h1 class="brand">87app</h1>
       <p class="hero__lead">花業界の次世代プラットフォーム</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="https://87app.vercel.app/" target="_blank" rel="noopener noreferrer">店舗を無料登録する</a>
-        <a class="btn btn--ghost" href="#about">詳しく見る</a>
+        <a class="btn btn--primary" href="https://87app.vercel.app/simple-signup" target="_blank" rel="noopener noreferrer">店舗を無料登録する</a>
+        <a class="btn btn--ghost" href="guide.html">登録のやり方</a>
       </div>
     </div>
   </header>
@@ -583,6 +509,52 @@
       </div>
     </section>
 
+    <section class="section" id="howto">
+      <div class="reveal">
+        <p class="section__label">How to register</p>
+        <h2 class="section__title">登録のやり方（かんたん5ステップ）</h2>
+        <div class="section__body">
+          <p>パソコンが苦手な方向けに、画面の順番どおりにまとめました。詳細な入力項目やボタン名は、手順ガイドのページで確認できます。</p>
+        </div>
+        <ol class="howto-steps">
+          <li>
+            <div>
+              <strong>新規ユーザー登録</strong>
+              <p>メールアドレスとパスワード（6文字以上）でアカウントをつくります。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>ログイン</strong>
+              <p>登録したメールとパスワードでログインします。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>メニュー画面</strong>
+              <p>ログイン後の一覧から、次の登録へ進みます。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>店舗登録（花屋さん）</strong>
+              <p>「店舗データ管理」で住所を入れ、<strong>位置取得</strong>して地図に載せます。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>スクール登録</strong>
+              <p>「レッスンスクール管理」で登録。詳細住所や位置情報は不要です。</p>
+            </div>
+          </li>
+        </ol>
+        <div class="howto-actions">
+          <a class="btn btn--primary" href="guide.html">くわしい手順を見る</a>
+          <a class="btn btn--secondary" href="https://87app.vercel.app/simple-signup" target="_blank" rel="noopener noreferrer">今すぐユーザー登録</a>
+        </div>
+      </div>
+    </section>
+
     <section class="cta" id="register">
       <div class="cta__media" aria-hidden="true">
         <img src="assets/cta.svg" alt="" width="1600" height="900">
@@ -590,8 +562,11 @@
       <div class="cta__veil" aria-hidden="true"></div>
       <div class="cta__inner reveal">
         <h2 class="cta__title">まずは無料で店舗登録</h2>
-        <p class="cta__text">全国の花店・レッスンスクールのご参加をお待ちしています。<br>登録はアプリ側のページからどうぞ。</p>
-        <a class="btn btn--primary btn--large" href="https://87app.vercel.app/" target="_blank" rel="noopener noreferrer">87app で登録する</a>
+        <p class="cta__text">全国の花店・レッスンスクールのご参加をお待ちしています。<br>迷ったら、先に「登録のやり方」をご覧ください。</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary btn--large" href="https://87app.vercel.app/simple-signup" target="_blank" rel="noopener noreferrer">ユーザー登録をはじめる</a>
+          <a class="btn btn--secondary" href="guide.html">登録のやり方</a>
+        </div>
         <a class="cta__url" href="https://87app.vercel.app/" target="_blank" rel="noopener noreferrer">https://87app.vercel.app/</a>
       </div>
     </section>
@@ -599,7 +574,7 @@
 
   <footer>
     <p>&copy; 2026 87app</p>
-    <p><a href="https://note.com/bloemism/n/n37db7ee7c85d" target="_blank" rel="noopener noreferrer">構想の詳細は note でも紹介しています</a></p>
+    <p><a href="guide.html">登録のやり方</a>　/　<a href="https://note.com/bloemism/n/n37db7ee7c85d" target="_blank" rel="noopener noreferrer">構想の詳細（note）</a></p>
   </footer>
 
   <script>

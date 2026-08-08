@@ -9,6 +9,8 @@
 
 ```
 index.html          # LP 本体
+guide.html          # 登録手順ガイド（ユーザー登録〜店舗/スクール）
+styles.css          # 共通スタイル
 assets/
   hero.svg          # ヒーロー（差し替え可 → hero.jpg 等）
   service-flow.svg  # サービス流れ
