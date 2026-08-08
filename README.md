@@ -16,7 +16,14 @@ assets/
   cta.svg           # 最終 CTA 背景
 ```
 
-画像を差し替えるときは `assets/` に実写を置き、`index.html` 内の `src` を対応するファイル名に変更してください。
+画像を差し替えるときは、次のファイル名で `assets/` に置き、`index.html` の対応する `src` を `.jpg` に変更してください。
+
+| 用途 | ファイル名 | 現在のプレースホルダ |
+|------|------------|----------------------|
+| ヒーロー | `hero.jpg` | `hero.svg` |
+| サービス流れ | `service-flow.jpg` | `service-flow.svg` |
+| サービス補足 | `service-care.jpg` | `service-care.svg` |
+| 最終 CTA 背景 | `cta.jpg` | `cta.svg` |
 
 ## ローカル確認
 
