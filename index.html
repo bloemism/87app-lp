@@ -96,10 +96,11 @@
       z-index: 3;
       width: min(28rem, calc(100% - 2.5rem));
       text-align: right;
-      color: #ffffff;
+      color: #f3d18a;
       text-shadow:
-        0 1px 2px rgba(12, 18, 14, 0.65),
-        0 6px 22px rgba(12, 18, 14, 0.5);
+        0 1px 0 rgba(255, 236, 190, 0.35),
+        0 2px 3px rgba(20, 14, 8, 0.75),
+        0 8px 24px rgba(12, 18, 14, 0.55);
       opacity: 0;
       transform: translateY(-0.75rem);
       animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
@@ -112,13 +113,18 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       line-height: 1.35;
+      color: #ffd778;
+      -webkit-text-stroke: 0.4px rgba(90, 55, 10, 0.35);
     }
 
     .hero__notice p {
       margin: 0;
-      font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+      font-family: var(--font-body);
+      font-size: clamp(1.02rem, 1.9vw, 1.18rem);
+      font-weight: 700;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.96);
+      letter-spacing: 0.03em;
+      color: #f6dea0;
     }
 
     .hero__notice p + p {
@@ -528,14 +534,14 @@
       <img src="assets/hero-shop.png" alt="" width="1024" height="558">
     </div>
     <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__notice">
+      <p class="hero__notice-lead">2026年内　無料登録　募集中</p>
+      <p>2027年1月から半年の運営テストに向けて募集しています。</p>
+      <p>テスト時期にメリットを感じない場合は、登録解除も可能です。</p>
+    </div>
     <div class="hero__content">
       <h1 class="brand">87app</h1>
       <p class="hero__lead">お花が好きな人のためのアプリ</p>
-      <div class="hero__notice">
-        <p class="hero__notice-lead">2026年内　無料登録　募集中</p>
-        <p>2027年1月から半年の運営テストに向けて募集しています。</p>
-        <p>テスト時期にメリットを感じない場合は、登録解除も可能です。</p>
-      </div>
       <div class="hero__actions">
         <a class="btn btn--primary" href="https://87app.vercel.app/simple-signup" target="_blank" rel="noopener noreferrer">店舗を無料登録する</a>
         <a class="btn btn--ghost" href="guide.html">登録のやり方</a>
