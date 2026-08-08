@@ -12,7 +12,7 @@ index.html          # LP 本体
 guide.html          # 登録手順ガイド（ユーザー登録〜店舗/スクール）
 styles.css          # 共通スタイル
 assets/
-  hero.png          # ヒーロー
+  hero-shop.png     # ヒーロー（文字なし写真）
   service-life.png  # サービス全体の流れ
   points.png        # ポイント仕組み
   schedule.png      # スケジュール

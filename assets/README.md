@@ -1,7 +1,7 @@
 # 画像アセット
 
 ## LP 本体
-- `hero.png` — ファーストビュー
+- `hero-shop.png` — ファーストビュー（文字なし写真）
 - `service-life.png` — サービス全体の流れ
 - `points.png` — ポイント活用の仕組み
 - `schedule.png` — スケジュール
