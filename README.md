@@ -12,20 +12,12 @@ index.html          # LP 本体
 guide.html          # 登録手順ガイド（ユーザー登録〜店舗/スクール）
 styles.css          # 共通スタイル
 assets/
-  hero.svg          # ヒーロー（差し替え可 → hero.jpg 等）
-  service-flow.svg  # サービス流れ
-  service-care.svg  # サービス補足
-  cta.svg           # 最終 CTA 背景
+  hero.png          # ヒーロー
+  service-life.png  # サービス全体の流れ
+  points.png        # ポイント仕組み
+  schedule.png      # スケジュール
+  map-*-initial.svg # ガイド用マップ初期イメージ（実データなし）
 ```
-
-画像を差し替えるときは、次のファイル名で `assets/` に置き、`index.html` の対応する `src` を `.jpg` に変更してください。
-
-| 用途 | ファイル名 | 現在のプレースホルダ |
-|------|------------|----------------------|
-| ヒーロー | `hero.jpg` | `hero.svg` |
-| サービス流れ | `service-flow.jpg` | `service-flow.svg` |
-| サービス補足 | `service-care.jpg` | `service-care.svg` |
-| 最終 CTA 背景 | `cta.jpg` | `cta.svg` |
 
 ## ローカル確認
 

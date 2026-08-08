@@ -41,7 +41,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(12, 31, 22, 0.25) 0%, rgba(12, 31, 22, 0.45) 40%, rgba(12, 31, 22, 0.88) 100%);
+        linear-gradient(180deg, rgba(12, 31, 22, 0.05) 0%, rgba(12, 31, 22, 0.15) 55%, rgba(12, 31, 22, 0.72) 100%);
       z-index: 1;
     }
 
@@ -50,36 +50,45 @@
       z-index: 2;
       width: min(100% - 2.5rem, var(--wide));
       margin: 0 auto;
-      padding: 0 0 clamp(3.5rem, 8vh, 5.5rem);
+      padding: 0 0 clamp(2.5rem, 6vh, 4rem);
     }
 
     .brand {
-      font-family: var(--font-display);
-      font-size: clamp(3.5rem, 12vw, 7rem);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      line-height: 1;
-      margin: 0 0 1rem;
-      opacity: 0;
-      transform: translateY(1.25rem);
-      animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
-    }
-
-    .hero__lead {
-      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      max-width: 28rem;
-      margin: 0 0 1.75rem;
-      opacity: 0;
-      transform: translateY(1rem);
-      animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .hero__actions {
       opacity: 0;
       transform: translateY(1rem);
-      animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+      animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+    }
+
+    .figure-block {
+      margin: 1.75rem 0 0;
+    }
+
+    .figure-block img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .figure-block figcaption {
+      margin-top: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .section--figure {
+      width: min(100% - 2.5rem, var(--wide));
     }
 
     /* —— Vision —— */
@@ -388,8 +397,8 @@
       margin-left: 0;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .brand, .hero__lead, .hero__actions,
+      @media (prefers-reduced-motion: reduce) {
+      .hero__actions,
       .hero__media img, .cta .btn--primary {
         animation: none !important;
         transition: none !important;
@@ -401,14 +410,12 @@
 </head>
 <body>
   <header class="hero" id="top">
-    <div class="hero__media" aria-hidden="true">
-      <!-- 差し替え: assets/hero.jpg を置いたら src を差し替えてください -->
-      <img src="assets/hero.svg" alt="" width="1920" height="1080">
+    <div class="hero__media">
+      <img src="assets/hero.png" alt="87app — お花が好きな人のためのアプリ。全国の花屋やフラワーレッスンを見つけて、花のある生活を始めましょう。" width="1376" height="768">
     </div>
     <div class="hero__veil" aria-hidden="true"></div>
     <div class="hero__content">
       <h1 class="brand">87app</h1>
-      <p class="hero__lead">花業界の次世代プラットフォーム</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="https://87app.vercel.app/simple-signup" target="_blank" rel="noopener noreferrer">店舗を無料登録する</a>
         <a class="btn btn--ghost" href="guide.html">登録のやり方</a>
@@ -441,71 +448,42 @@
       </div>
     </section>
 
-    <section class="section section--wide" id="service">
+    <section class="section section--figure" id="service">
       <div class="reveal">
         <p class="section__label">Service</p>
         <h2 class="section__title">基本的なサービス</h2>
         <div class="section__body" style="max-width: var(--max);">
-          <p>お客様ができるだけ様々なお花屋さんを知り、花を購入し、飾る喜びを感じられる流れをつくります。さらに上手くいけたいと思ったら、近くのレッスンを探して体験する——そんな循環を想定しています。</p>
+          <p>地図でお店を探し、花を選び、スマホで決済し、レッスンやAIサポートまで——花のある生活をフルサポートします。</p>
         </div>
-        <p class="flow" aria-label="サービスの流れ">
-          <span class="flow__item">地図</span>
-          <span class="flow__arrow" aria-hidden="true">→</span>
-          <span class="flow__item">店舗案内</span>
-          <span class="flow__arrow" aria-hidden="true">→</span>
-          <span class="flow__item">決済</span>
-          <span class="flow__arrow" aria-hidden="true">→</span>
-          <span class="flow__item">ポイント還元</span>
-          <span class="flow__arrow" aria-hidden="true">→</span>
-          <span class="flow__item">地図</span>
-        </p>
-        <div class="service-media">
-          <img src="assets/service-flow.svg" alt="地図から店舗案内、決済、ポイント還元への流れ" width="1200" height="800">
-        </div>
-        <ul class="feature-list">
-          <li>
-            <strong>買う前も、買ったあともサポート</strong>
-            <p>AI検索で予算感を画像から調べたり、注文の仕方や花言葉、購入後の管理・病気の症状まで、花屋さんに行く前後で役立つ情報に触れられます。</p>
-          </li>
-          <li>
-            <strong>購入金額の5％がポイント還元</strong>
-            <p>次回以降の購入に使えるため、普段手が届きにくい花や、毎週の花飾りのきっかけになります。結果として、お花のロスを減らすことにもつながります。</p>
-          </li>
-          <li>
-            <strong>夏でも、近くから届く新鮮な花</strong>
-            <p>スタンプラリーなどで来店のきっかけをつくり、地図のおかげで遠方配送も近くの花店から届けられます。常に新鮮な花と、アフターサービスを受けられる環境を目指しています。</p>
-          </li>
-        </ul>
-        <div class="service-media">
-          <img src="assets/service-care.svg" alt="花のある暮らしとケアのイメージ" width="1200" height="800">
-        </div>
-        <div class="section__body" style="max-width: var(--max); margin-top: 2rem;">
-          <p>昔あった、お客様とお花屋さんのつながりが戻り、夏場でも花を贈る気持ちが自然に生まれること——それが願いです。</p>
-        </div>
+        <figure class="figure-block">
+          <img src="assets/service-life.png" alt="87appの流れ：地図でお店探し、お花を選ぶ、スマホで決済、レッスンに参加、AI質問解答" width="1376" height="768">
+        </figure>
       </div>
     </section>
 
-    <section class="section" id="timeline">
+    <section class="section section--figure" id="points">
+      <div class="reveal">
+        <p class="section__label">Points</p>
+        <h2 class="section__title">ポイント活用の仕組み</h2>
+        <div class="section__body" style="max-width: var(--max);">
+          <p>お会計金額の5%がポイントになり、次回以降の買い物で1ポイント＝1円引きとして使えます。</p>
+        </div>
+        <figure class="figure-block">
+          <img src="assets/points.png" alt="お会計の5%がポイントになり、次回の買い物で値引きに使える仕組み" width="1376" height="768">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--figure" id="timeline">
       <div class="reveal">
         <p class="section__label">Timeline</p>
         <h2 class="section__title">スケジュール</h2>
-        <div class="section__body">
+        <div class="section__body" style="max-width: var(--max);">
           <p>無料での店舗登録はすでに開始しています。自宅花屋さん以外で小売をされている方は、全国どの地域の方も歓迎です。</p>
         </div>
-        <ol class="timeline">
-          <li>
-            <p class="timeline__when">現在</p>
-            <p class="timeline__what">店舗の無料登録を受付中</p>
-          </li>
-          <li>
-            <p class="timeline__when">2027年1月</p>
-            <p class="timeline__what">テスト運用を開始し、修正を重ねながら半年継続</p>
-          </li>
-          <li>
-            <p class="timeline__when">2027年夏</p>
-            <p class="timeline__what">本格的な活動へ</p>
-          </li>
-        </ol>
+        <figure class="figure-block">
+          <img src="assets/schedule.png" alt="87appスケジュール：クラウドファンディング、全国店舗募集とテスト運用、2027年夏の本格始動、2028年のイベント創出" width="1376" height="768">
+        </figure>
       </div>
     </section>
 
@@ -557,7 +535,7 @@
 
     <section class="cta" id="register">
       <div class="cta__media" aria-hidden="true">
-        <img src="assets/cta.svg" alt="" width="1600" height="900">
+        <img src="assets/hero.png" alt="" width="1376" height="768">
       </div>
       <div class="cta__veil" aria-hidden="true"></div>
       <div class="cta__inner reveal">
