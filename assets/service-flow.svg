@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Service flow placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8efe6"/>
+      <stop offset="100%" stop-color="#c5d4c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="220" cy="400" r="70" fill="#2d5a40"/>
+  <circle cx="460" cy="400" r="70" fill="#3d6e52"/>
+  <circle cx="700" cy="400" r="70" fill="#4a7d5e"/>
+  <circle cx="940" cy="400" r="70" fill="#5a8f6c"/>
+  <path d="M290 400 H390 M530 400 H630 M770 400 H870" stroke="#2d5a40" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  <text x="220" y="410" text-anchor="middle" fill="#f4f7f3" font-family="sans-serif" font-size="22">0ó</text>
+  <text x="460" y="410" text-anchor="middle" fill="#f4f7f3" font-family="sans-serif" font-size="22">—</text>
+  <text x="700" y="410" text-anchor="middle" fill="#f4f7f3" font-family="sans-serif" font-size="22">z</text>
+  <text x="940" y="410" text-anchor="middle" fill="#f4f7f3" font-family="sans-serif" font-size="22">„C</text>
+</svg>

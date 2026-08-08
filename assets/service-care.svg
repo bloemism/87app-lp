@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Service care placeholder">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d5e0d6"/>
+      <stop offset="100%" stop-color="#f0f4ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg2)"/>
+  <ellipse cx="600" cy="420" rx="180" ry="240" fill="#6b8f74" fill-opacity="0.35"/>
+  <ellipse cx="520" cy="380" rx="90" ry="140" fill="#8aaa8e" fill-opacity="0.55" transform="rotate(-25 520 380)"/>
+  <ellipse cx="680" cy="380" rx="90" ry="140" fill="#8aaa8e" fill-opacity="0.55" transform="rotate(25 680 380)"/>
+  <ellipse cx="600" cy="340" rx="90" ry="140" fill="#a3c0a6" fill-opacity="0.6"/>
+  <circle cx="600" cy="420" r="36" fill="#e8f0e6"/>
+  <rect x="585" y="450" width="30" height="160" rx="12" fill="#4a6b52" fill-opacity="0.55"/>
+</svg>

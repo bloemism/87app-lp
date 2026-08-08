@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="CTA placeholder">
+  <defs>
+    <linearGradient id="ctaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#163226"/>
+      <stop offset="100%" stop-color="#0c1f16"/>
+    </linearGradient>
+    <radialGradient id="ctaGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#5a8f6c" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0c1f16" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#ctaBg)"/>
+  <rect width="1600" height="900" fill="url(#ctaGlow)"/>
+  <ellipse cx="200" cy="700" rx="260" ry="120" fill="#1f3d2c" fill-opacity="0.7"/>
+  <ellipse cx="1400" cy="200" rx="200" ry="260" fill="#2d5a40" fill-opacity="0.25"/>
+</svg>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>87app — 花業界の次世代プラットフォーム</title>
+  <meta name="description" content="87appは、地図から店舗案内・決済・ポイント還元までをつなぐ花業界の次世代プラットフォームです。全国の花店の無料登録を受付中。">
+  <meta property="og:title" content="87app — 花業界の次世代プラットフォーム">
+  <meta property="og:description" content="全国の花店をつなぎ、お客様に花を買う・飾る喜びを届けるアプリ。店舗の無料登録受付中。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-deep: #163226;
+      --green-mid: #2d5a40;
+      --green-soft: #5a8f6c;
+      --green-mist: #d8e4da;
+      --ink: #1a2420;
+      --ink-soft: #4a5850;
+      --paper: #f3f6f2;
+      --paper-warm: #e7eee8;
+      --white: #fafcf9;
+      --cta: #1f6b45;
+      --cta-hover: #185536;
+      --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+      --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+      --max: 40rem;
+      --wide: 68rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 10% 0%, rgba(90, 143, 108, 0.12), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 20%, rgba(45, 90, 64, 0.08), transparent 50%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 45%, var(--paper) 100%);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero__media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.06);
+      animation: heroZoom 18s ease-out forwards;
+    }
+
+    .hero__veil {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12, 31, 22, 0.25) 0%, rgba(12, 31, 22, 0.45) 40%, rgba(12, 31, 22, 0.88) 100%);
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: min(100% - 2.5rem, var(--wide));
+      margin: 0 auto;
+      padding: 0 0 clamp(3.5rem, 8vh, 5.5rem);
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin: 0 0 1rem;
+      opacity: 0;
+      transform: translateY(1.25rem);
+      animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    }
+
+    .hero__lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      max-width: 28rem;
+      margin: 0 0 1.75rem;
+      opacity: 0;
+      transform: translateY(1rem);
+      animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+    }
+
+    .hero__actions {
+      opacity: 0;
+      transform: translateY(1rem);
+      animation: riseIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+    }
+
+    /* —— Buttons —— */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.6rem;
+      border-radius: 2px;
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .btn--primary {
+      background: var(--cta);
+      color: var(--white);
+    }
+
+    .btn--primary:hover {
+      background: var(--cta-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      margin-left: 0.75rem;
+    }
+
+    .btn--ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn--large {
+      padding: 1.15rem 2.2rem;
+      font-size: 1.05rem;
+    }
+
+    /* —— Sections —— */
+    .section {
+      width: min(100% - 2.5rem, var(--max));
+      margin: 0 auto;
+      padding: clamp(4rem, 10vw, 6.5rem) 0;
+    }
+
+    .section--wide {
+      width: min(100% - 2.5rem, var(--wide));
+    }
+
+    .section__label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin: 0 0 0.75rem;
+    }
+
+    .section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      margin: 0 0 1.5rem;
+      color: var(--green-deep);
+    }
+
+    .section__body p {
+      margin: 0 0 1.15rem;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    .section__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(1.5rem);
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* —— Vision —— */
+    .vision {
+      background: linear-gradient(180deg, transparent, rgba(45, 90, 64, 0.06), transparent);
+    }
+
+    .vision__stat {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      color: var(--green-mid);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin: 0 0 0.5rem;
+    }
+
+    .vision__stat span {
+      font-size: 0.45em;
+      font-weight: 600;
+      margin-left: 0.15em;
+    }
+
+    /* —— Service —— */
+    .service-media {
+      margin: 2rem 0 0;
+      overflow: hidden;
+    }
+
+    .service-media img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.35rem;
+      align-items: center;
+      margin: 1.75rem 0 0;
+      font-weight: 700;
+      color: var(--green-deep);
+      letter-spacing: 0.04em;
+    }
+
+    .flow__item {
+      padding: 0.35rem 0;
+    }
+
+    .flow__arrow {
+      color: var(--green-soft);
+      opacity: 0.7;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 1.75rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .feature-list li {
+      padding-left: 1.1rem;
+      border-left: 2px solid var(--green-soft);
+    }
+
+    .feature-list strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.03em;
+    }
+
+    .feature-list p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    /* —— Timeline —— */
+    .timeline {
+      list-style: none;
+      margin: 2rem 0 0;
+      padding: 0;
+      border-left: 1px solid var(--green-mist);
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0 0 1.75rem 1.5rem;
+    }
+
+    .timeline li:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 0.55rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green-mid);
+    }
+
+    .timeline__when {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--green-soft);
+      margin: 0 0 0.25rem;
+    }
+
+    .timeline__what {
+      margin: 0;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* —— Final CTA —— */
+    .cta {
+      position: relative;
+      color: var(--white);
+      min-height: min(70svh, 36rem);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .cta__media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .cta__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cta__veil {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(12, 31, 22, 0.92) 0%, rgba(22, 50, 38, 0.78) 100%);
+      z-index: 1;
+    }
+
+    .cta__inner {
+      position: relative;
+      z-index: 2;
+      width: min(100% - 2.5rem, var(--max));
+      margin: 0 auto;
+      padding: clamp(4rem, 10vw, 6rem) 0;
+      text-align: center;
+    }
+
+    .cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+      margin: 0 0 1rem;
+    }
+
+    .cta__text {
+      margin: 0 0 2rem;
+      color: rgba(250, 252, 249, 0.85);
+      font-size: 1.05rem;
+    }
+
+    .cta .btn--primary {
+      animation: ctaPulse 2.8s ease-in-out infinite;
+    }
+
+    .cta__url {
+      display: block;
+      margin-top: 1.25rem;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      color: rgba(250, 252, 249, 0.65);
+      text-decoration: none;
+    }
+
+    .cta__url:hover {
+      color: var(--white);
+    }
+
+    /* —— Footer —— */
+    footer {
+      padding: 2.5rem 1.25rem 3rem;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: var(--green-mid);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer p {
+      margin: 0.35rem 0;
+    }
+
+    @keyframes riseIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroZoom {
+      to {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(31, 107, 69, 0.45); }
+      50% { box-shadow: 0 0 0 12px rgba(31, 107, 69, 0); }
+    }
+
+    @media (max-width: 560px) {
+      .btn--ghost {
+        display: none;
+      }
+
+      .flow {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .brand, .hero__lead, .hero__actions,
+      .reveal, .hero__media img, .cta .btn--primary {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__media" aria-hidden="true">
+      <!-- 差し替え: assets/hero.jpg を置けばこちらを優先表示できます -->
+      <img src="assets/hero.svg" alt="" width="1920" height="1080">
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <h1 class="brand">87app</h1>
+      <p class="hero__lead">花業界の次世代プラットフォーム</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://87app.vercel.app/" target="_blank" rel="noopener noreferrer">店舗を無料登録する</a>
+        <a class="btn btn--ghost" href="#about">詳しく見る</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="reveal">
+        <p class="section__label">Background</p>
+        <h2 class="section__title">背景と想い</h2>
+        <div class="section__body">
+          <p>生産者と花店の縮小が進むなか、コスト高や酷暑、台風の増加といった変化も重なっています。87appは、5年後を見据えて2025年から構想をまとめ、自ら開発したサービスです。</p>
+          <p>生産者の現状を守るには、小売店の存在が不可欠です。一部の大型店舗やアプリ内販売だけでは足りません。年間を通じて、多くの地域の品目・品種が全国で同時に扱われること——それが業界の課題に向き合う鍵だと考えています。</p>
+          <p>そのためには、全国の小売花店やフラワーレッスンスクールの力が必要です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vision" id="vision">
+      <div class="reveal">
+        <p class="section__label">Vision</p>
+        <h2 class="section__title">目指す姿</h2>
+        <p class="vision__stat">1,000<span>店舗超</span></p>
+        <div class="section__body">
+          <p>毎月、多くの花を扱う店舗が全国に広がれば、業界は現状を維持しながら未来へ進むことができます。ただし維持だけでは世代交代も、新しい景色も見えません。</p>
+          <p>まずはアプリを軌道に乗せ、アップデートとイベントを重ね、全国の花好きの皆さまへ還元していく——それが87appの目指す道です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--wide" id="service">
+      <div class="reveal">
+        <p class="section__label">Service</p>
+        <h2 class="section__title">基本的なサービス</h2>
+        <div class="section__body" style="max-width: var(--max);">
+          <p>お客様ができるだけ様々なお花屋さんを知り、花を購入し、飾る喜びを感じられる流れをつくります。さらに上手くいけたいと思ったら、近くのレッスンを探して体験する——そんな循環を想定しています。</p>
+        </div>
+        <p class="flow" aria-label="サービスの流れ">
+          <span class="flow__item">地図</span>
+          <span class="flow__arrow" aria-hidden="true">→</span>
+          <span class="flow__item">店舗案内</span>
+          <span class="flow__arrow" aria-hidden="true">→</span>
+          <span class="flow__item">決済</span>
+          <span class="flow__arrow" aria-hidden="true">→</span>
+          <span class="flow__item">ポイント還元</span>
+          <span class="flow__arrow" aria-hidden="true">→</span>
+          <span class="flow__item">地図</span>
+        </p>
+        <div class="service-media">
+          <img src="assets/service-flow.svg" alt="地図から店舗案内、決済、ポイント還元への流れ" width="1200" height="800">
+        </div>
+        <ul class="feature-list">
+          <li>
+            <strong>買う前も、買ったあともサポート</strong>
+            <p>AI検索で予算感を画像から調べたり、注文の仕方や花言葉、購入後の管理・病気の症状まで、花屋さんに行く前後で役立つ情報に触れられます。</p>
+          </li>
+          <li>
+            <strong>購入金額の5％がポイント還元</strong>
+            <p>次回以降の購入に使えるため、普段手が届きにくい花や、毎週の花飾りのきっかけになります。結果として、お花のロスを減らすことにもつながります。</p>
+          </li>
+          <li>
+            <strong>夏でも、近くから届く新鮮な花</strong>
+            <p>スタンプラリーなどで来店のきっかけをつくり、地図のおかげで遠方配送も近くの花店から届けられます。常に新鮮な花と、アフターサービスを受けられる環境を目指しています。</p>
+          </li>
+        </ul>
+        <div class="service-media">
+          <img src="assets/service-care.svg" alt="花のある暮らしとケアのイメージ" width="1200" height="800">
+        </div>
+        <div class="section__body" style="max-width: var(--max); margin-top: 2rem;">
+          <p>昔あった、お客様とお花屋さんのつながりが戻り、夏場でも花を贈る気持ちが自然に生まれること——それが願いです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="reveal">
+        <p class="section__label">Timeline</p>
+        <h2 class="section__title">スケジュール</h2>
+        <div class="section__body">
+          <p>無料での店舗登録はすでに開始しています。自宅花屋さん以外で小売をされている方は、全国どの地域の方も歓迎です。</p>
+        </div>
+        <ol class="timeline">
+          <li>
+            <p class="timeline__when">現在</p>
+            <p class="timeline__what">店舗の無料登録を受付中</p>
+          </li>
+          <li>
+            <p class="timeline__when">2027年1月</p>
+            <p class="timeline__what">テスト運用を開始し、修正を重ねながら半年継続</p>
+          </li>
+          <li>
+            <p class="timeline__when">2027年夏</p>
+            <p class="timeline__what">本格的な活動へ</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta" id="register">
+      <div class="cta__media" aria-hidden="true">
+        <img src="assets/cta.svg" alt="" width="1600" height="900">
+      </div>
+      <div class="cta__veil" aria-hidden="true"></div>
+      <div class="cta__inner reveal">
+        <h2 class="cta__title">まずは無料で店舗登録</h2>
+        <p class="cta__text">全国の花店・レッスンスクールのご参加をお待ちしています。<br>登録はアプリ側のページからどうぞ。</p>
+        <a class="btn btn--primary btn--large" href="https://87app.vercel.app/" target="_blank" rel="noopener noreferrer">87app で登録する</a>
+        <a class="cta__url" href="https://87app.vercel.app/" target="_blank" rel="noopener noreferrer">https://87app.vercel.app/</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 87app</p>
+    <p><a href="https://note.com/bloemism/n/n37db7ee7c85d" target="_blank" rel="noopener noreferrer">構想の詳細は note でも紹介しています</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var nodes = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        nodes.forEach(function (el) { el.classList.add("is-visible"); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+      nodes.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+</html>
