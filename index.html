@@ -115,6 +115,35 @@
       width: min(100% - 2.5rem, var(--wide));
     }
 
+    .notice-banner {
+      margin: 2rem 0 0;
+      padding: 1.35rem 1.35rem 1.4rem;
+      background: linear-gradient(135deg, #5c2a38 0%, #7a3a4d 55%, #8b4558 100%);
+      color: #fff8f4;
+      box-shadow: 0 12px 28px rgba(92, 42, 56, 0.18);
+    }
+
+    .notice-banner__lead {
+      margin: 0 0 0.55rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 2.8vw, 1.4rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      line-height: 1.45;
+      color: #ffe7b8;
+    }
+
+    .notice-banner p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: rgba(255, 248, 244, 0.92);
+    }
+
+    .notice-banner p + p {
+      margin-top: 0.55rem;
+    }
+
     /* —— Vision —— */
     .vision {
       background:
@@ -585,6 +614,11 @@
         <figure class="figure-block">
           <img src="assets/schedule.png" alt="87appスケジュール：クラウドファンディング、全国店舗募集とテスト運用、2027年夏の本格始動、2028年のイベント創出" width="1376" height="768">
         </figure>
+        <aside class="notice-banner" aria-label="無料登録募集のお知らせ">
+          <p class="notice-banner__lead">2026年内　無料登録　募集中</p>
+          <p>2027年1月から半年の運営テストに向けて、2026年内の無料登録を募集しています。</p>
+          <p>テスト時期にメリットを感じない場合は、登録を解除することも可能です。</p>
+        </aside>
       </div>
     </section>
 
