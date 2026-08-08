@@ -247,6 +247,24 @@
       align-items: center;
     }
 
+    .map-preview {
+      margin: 0 0 1.5rem;
+      padding: 0;
+    }
+
+    .map-preview img {
+      width: 100%;
+      border: 1px solid var(--green-mist);
+      background: var(--white);
+    }
+
+    .map-preview figcaption {
+      margin-top: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
     .guide-cta {
       width: min(100% - 2.5rem, var(--max));
       margin: 0 auto;
@@ -276,7 +294,7 @@
         <span>登録のやり方</span>
       </nav>
       <h1>登録のやり方</h1>
-      <p>パソコンが苦手な方向けに、画面の順番どおりに進めます。まずは「ユーザー登録」→「ログイン」→「メニュー」まで。そのあと、お店の方は店舗登録、スクールの方はスクール登録です。</p>
+      <p>パソコンが苦手な方向けに、画面の順番どおりに進めます。まずは「ユーザー登録」→「ログイン」→「メニュー」まで。そのあと、お店の方は店舗登録、スクールの方はスクール登録です。マップや店舗データの確認など、普段の利用はすべてアプリ内ログイン後に行います。</p>
     </div>
   </header>
 
@@ -404,11 +422,14 @@
         </tbody>
       </table>
       <div class="note">
-        <p>位置取得は、住所から地図上の場所を決める操作です。うまくいかないときは住所の表記を少し直して、もう一度「位置取得」を試してください。登録後の地図の見え方は「全国フローリストマップ」でも確認できます。</p>
+        <p>位置取得は、住所から地図上の場所を決める操作です。うまくいかないときは住所の表記を少し直して、もう一度「位置取得」を試してください。登録後のマップ確認も、アプリにログインしたうえでメニューから行います。</p>
       </div>
+      <figure class="map-preview">
+        <img src="assets/map-florist-initial.svg" alt="全国フローリストマップの初期画面イメージ。店舗データは表示していません。" width="1200" height="720">
+        <figcaption>マップの初期画面イメージです。店舗などの実データは出していません。実際の利用はログイン後のみです。</figcaption>
+      </figure>
       <div class="step__actions">
         <a class="btn btn--primary" href="https://87app.vercel.app/store-registration" target="_blank" rel="noopener noreferrer">店舗データ管理を開く</a>
-        <a class="btn btn--secondary" href="https://87app.vercel.app/florist-map" target="_blank" rel="noopener noreferrer">フローリストマップを見る</a>
       </div>
     </section>
 
@@ -454,11 +475,14 @@
         </tbody>
       </table>
       <div class="note">
-        <p>店舗登録と違い、「位置取得」の操作はありません。レッスンマップ側の表示用に、地域（都道府県・市区町村）を登録するイメージです。</p>
+        <p>店舗登録と違い、「位置取得」の操作はありません。レッスンマップ用に、地域（都道府県・市区町村）を登録するイメージです。マップ本体はログイン後にメニューから開きます。</p>
       </div>
+      <figure class="map-preview">
+        <img src="assets/map-lesson-initial.svg" alt="フラワーレッスンマップの初期画面イメージ。スクールデータは表示していません。" width="1200" height="720">
+        <figcaption>マップの初期画面イメージです。登録スクールの一覧データは出していません。実際の利用はログイン後のみです。</figcaption>
+      </figure>
       <div class="step__actions">
         <a class="btn btn--primary" href="https://87app.vercel.app/lesson-school-management" target="_blank" rel="noopener noreferrer">レッスンスクール管理を開く</a>
-        <a class="btn btn--secondary" href="https://87app.vercel.app/flower-lesson-map" target="_blank" rel="noopener noreferrer">レッスンマップを見る</a>
       </div>
     </section>
 
