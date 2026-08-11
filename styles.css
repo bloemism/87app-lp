@@ -109,6 +109,23 @@ a {
   width: min(100% - 2.5rem, var(--wide));
 }
 
+/* 導入3セクションは連続して読ませる */
+.section--compact {
+  padding: clamp(1.35rem, 3vw, 1.9rem) 0;
+}
+
+.section--compact + .section--compact {
+  padding-top: clamp(0.85rem, 2vw, 1.25rem);
+}
+
+#about.section--compact {
+  padding-top: clamp(2.2rem, 5vw, 3.2rem);
+}
+
+#structure.section--compact {
+  padding-bottom: clamp(2.2rem, 5vw, 3.2rem);
+}
+
 .section__label {
   font-size: 0.78rem;
   font-weight: 700;
