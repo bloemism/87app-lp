@@ -152,7 +152,7 @@
     }
 
     .figure-block {
-      margin: 1.75rem 0 0;
+      margin: 1rem 0 0;
     }
 
     .figure-block img {
@@ -162,7 +162,7 @@
     }
 
     .figure-block figcaption {
-      margin-top: 0.65rem;
+      margin-top: 0.5rem;
       font-size: 0.88rem;
       color: var(--ink-soft);
     }
@@ -172,8 +172,8 @@
     }
 
     .notice-banner {
-      margin: 2rem 0 0;
-      padding: 1.35rem 1.35rem 1.4rem;
+      margin: 1.15rem 0 0;
+      padding: 1.05rem 1.15rem;
       background: linear-gradient(135deg, #5c2a38 0%, #7a3a4d 55%, #8b4558 100%);
       color: #fff8f4;
       box-shadow: 0 12px 28px rgba(92, 42, 56, 0.18);
@@ -201,26 +201,26 @@
     }
 
     .audience-note {
-      margin: 0 0 1.5rem;
-      padding: 0.95rem 1.1rem;
+      margin: 0 0 0.9rem;
+      padding: 0.75rem 0.95rem;
       border-left: 3px solid #8b4558;
       background: rgba(139, 69, 88, 0.08);
       color: #5c2a38;
       font-size: 0.95rem;
       font-weight: 700;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .structure-flow {
       list-style: none;
-      margin: 1.75rem 0 0;
+      margin: 1rem 0 0;
       padding: 0;
       display: grid;
-      gap: 1rem;
+      gap: 0.55rem;
     }
 
     .structure-flow li {
-      padding: 1rem 0 1rem 1.1rem;
+      padding: 0.55rem 0 0.55rem 1rem;
       border-left: 2px solid var(--green-soft);
     }
 
@@ -241,26 +241,26 @@
     }
 
     .faq-list {
-      margin: 1.75rem 0 0;
+      margin: 1rem 0 0;
       display: grid;
-      gap: 0.85rem;
+      gap: 0.45rem;
     }
 
     .faq-list details {
       border-bottom: 1px solid var(--green-mist);
-      padding-bottom: 0.85rem;
+      padding-bottom: 0.55rem;
     }
 
     .faq-list summary {
       cursor: pointer;
       font-family: var(--font-display);
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       font-weight: 600;
       color: var(--green-deep);
       letter-spacing: 0.02em;
-      line-height: 1.55;
+      line-height: 1.45;
       list-style: none;
-      padding: 0.35rem 0;
+      padding: 0.25rem 0;
     }
 
     .faq-list summary::-webkit-details-marker {
@@ -280,14 +280,23 @@
     }
 
     .faq-list .faq-a {
-      margin: 0.55rem 0 0.25rem;
+      margin: 0.45rem 0 0.1rem;
       padding-left: 1.6rem;
       color: var(--ink-soft);
-      font-size: 0.98rem;
-      line-height: 1.8;
+      font-size: 0.96rem;
+      line-height: 1.65;
     }
 
-    .faq-list .faq-a::before {
+    .faq-list .faq-a > p {
+      margin: 0 0 0.55rem;
+      position: relative;
+    }
+
+    .faq-list .faq-a > p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-list .faq-a > p:first-child::before {
       content: "A";
       display: inline-block;
       margin-right: 0.55rem;
@@ -306,9 +315,9 @@
 
     .vision__emblem {
       display: block;
-      width: min(220px, 52vw);
+      width: min(180px, 46vw);
       height: auto;
-      margin: 0.25rem 0 1.35rem;
+      margin: 0.15rem 0 0.85rem;
       image-rendering: auto;
       filter: drop-shadow(0 10px 24px rgba(80, 40, 50, 0.12));
     }
@@ -363,14 +372,14 @@
 
     .feature-list {
       list-style: none;
-      margin: 1.75rem 0 0;
+      margin: 1rem 0 0;
       padding: 0;
       display: grid;
-      gap: 1.25rem;
+      gap: 0.7rem;
     }
 
     .feature-list li {
-      padding-left: 1.1rem;
+      padding-left: 1rem;
       border-left: 2px solid var(--green-soft);
     }
 
@@ -466,7 +475,7 @@
       z-index: 2;
       width: min(100% - 2.5rem, var(--max));
       margin: 0 auto;
-      padding: clamp(4rem, 10vw, 6rem) 0;
+      padding: clamp(3rem, 7vw, 4.5rem) 0;
       text-align: center;
     }
 
@@ -539,19 +548,19 @@
 
     .howto-steps {
       list-style: none;
-      margin: 1.75rem 0 0;
+      margin: 1rem 0 0;
       padding: 0;
       display: grid;
-      gap: 1rem;
+      gap: 0.55rem;
       counter-reset: howto;
     }
 
     .howto-steps li {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 0.85rem 1rem;
+      gap: 0.65rem 0.85rem;
       align-items: start;
-      padding-bottom: 1rem;
+      padding-bottom: 0.55rem;
       border-bottom: 1px solid var(--green-mist);
       counter-increment: howto;
     }
@@ -589,7 +598,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-top: 1.75rem;
+      margin-top: 1.1rem;
     }
 
     .cta .btn--secondary {
@@ -652,8 +661,10 @@
         <p class="section__label">Background</p>
         <h2 class="section__title">背景と想い</h2>
         <div class="section__body">
-          <p>生産者と花店の縮小が進むなか、コスト高や酷暑、台風の増加といった変化も重なっています。87appは、5年後を見据えて2025年から構想をまとめ、自ら開発したサービスです。</p>
-          <p>生産者の現状を守るには、小売店の存在が不可欠です。一部の大型店舗やアプリ内販売だけでは足りません。年間を通じて、多くの地域の品目・品種が全国で同時に扱われること——それが業界の課題に向き合う鍵だと考えています。</p>
+          <p>生産者と花店の縮小が進むなか、コスト高や酷暑、台風の増加といった変化も重なっています。</p>
+          <p>87appは、5年後を見据えて2025年から構想をまとめ、自ら開発したサービスです。</p>
+          <p>生産者の現状を守るには、小売店の存在が不可欠です。一部の大型店舗やアプリ内販売だけでは足りません。</p>
+          <p>年間を通じて、多くの地域の品目・品種が全国で同時に扱われること。それが業界の課題に向き合う鍵だと考えています。</p>
           <p>そのためには、全国の小売花店やフラワーレッスンスクールの力が必要です。</p>
         </div>
       </div>
@@ -666,8 +677,9 @@
         <img class="vision__emblem" src="assets/vision-87.png" alt="87 — 花と数字の装飾イラスト" width="142" height="142">
         <p class="vision__stat">1,000<span>店舗超</span></p>
         <div class="section__body">
-          <p>毎月、多くの花を扱う店舗が全国に広がれば、業界は現状を維持しながら未来へ進むことができます。ただし維持だけでは世代交代も、新しい景色も見えません。</p>
-          <p>まずはアプリを軌道に乗せ、アップデートとイベントを重ね、全国の花好きの皆さまへ還元していく——それが87appの目指す道です。</p>
+          <p>毎月、多くの花を扱う店舗が全国に広がれば、業界は現状を維持しながら未来へ進むことができます。</p>
+          <p>ただし維持だけでは、世代交代も新しい景色も見えません。</p>
+          <p>まずはアプリを軌道に乗せ、アップデートとイベントを重ね、全国の花好きの皆さまへ還元していく。それが87appの目指す道です。</p>
         </div>
       </div>
     </section>
@@ -808,23 +820,45 @@
         <div class="faq-list">
           <details open>
             <summary>いつから有料なのですか？いくらぐらいですか？</summary>
-            <p class="faq-a">テスト終了後に、このアプリにメリットがある方は継続を、そうでない方は解除してください。2027年6月時点で、店舗側への顧客増員、アプリの使用度、サーバー使用量やトラブル状況などをふまえ、有料化を進めてよいか判断できれば、登録店舗の負担が大きくならない範囲で月額3,000円〜5,000円程度を考えています。店舗数が増えた場合は、2,000円程度でも可能かもしれません。</p>
+            <div class="faq-a">
+              <p>テスト終了後に、このアプリにメリットがある方は継続を、そうでない方は解除してください。</p>
+              <p>2027年6月時点で、顧客増員・使用度・サーバー使用量やトラブル状況などをふまえ、有料化を進めてよいか判断します。</p>
+              <p>その際は、登録店舗の負担が大きくならない範囲で月額3,000円〜5,000円程度を考えています。店舗数が増えた場合は、2,000円程度でも可能かもしれません。</p>
+            </div>
           </details>
           <details>
             <summary>顧客ポイント分は運営側が払ってくれますか？</summary>
-            <p class="faq-a">顧客ポイントはリピーターを増やすためのものです。イメージとしては、毎週1,000円お買い上げのお客様を10人増やすことを第一段階と考えています。月40,000円の売上が増えれば、ポイント分もアプリ手数料も負担が少なく、プラスが大きいと考えています。</p>
+            <div class="faq-a">
+              <p>顧客ポイントはリピーターを増やすためのものです。</p>
+              <p>イメージとしては、毎週1,000円お買い上げのお客様を10人増やすことを第一段階と考えています。</p>
+              <p>月40,000円の売上が増えれば、ポイント分もアプリ手数料も負担が少なく、プラスが大きいと考えています。</p>
+            </div>
           </details>
           <details>
             <summary>宅急便や協会を使った今までの配送は使ってはいけませんか？</summary>
-            <p class="faq-a">いつも通りで構いません。「そのお店の花でなければ」というお客様もいます。宅急便を使うこと、手数料を払って協会を使うことも問題ありません。アプリはあくまで販売のツールです。夏場も花を送っていただきたいこと、お客様が花屋を選び花にこだわることが大事だと考えています。</p>
+            <div class="faq-a">
+              <p>いつも通りで構いません。「そのお店の花でなければ」というお客様もいます。</p>
+              <p>宅急便を使うこと、手数料を払って協会を使うことも問題ありません。アプリはあくまで販売のツールです。</p>
+              <p>夏場も花を送っていただきたいこと、お客様が花屋を選び花にこだわることが大事だと考えています。</p>
+            </div>
           </details>
           <details>
             <summary>クレジットはアプリ内のものを使わなければいけませんか？</summary>
-            <p class="faq-a">すでにSquareやSTORESを導入されている方も多いでしょう。顧客管理にもつながっていて、いまさら切り替えるのは手間です。アプリ内クレジットは、まだ決済手段がない方の支払いを助けるためのもので、未入金リスクを減らしたい方や、ポップアップストアなどをされる方が使えるイメージです。ネット環境があり、相手がアプリを入れていれば使えます。ただしポイント管理のため、アプリ内で現金決済をしてから通常レジ決済をしてください。そうしないとポイントがつきません。</p>
+            <div class="faq-a">
+              <p>すでにSquareやSTORESを導入されている方も多いでしょう。顧客管理にもつながっていて、いまさら切り替えるのは手間です。</p>
+              <p>アプリ内クレジットは、まだ決済手段がない方の支払いを助けるためのものです。未入金リスクを減らしたい方や、ポップアップストアなどをされる方が使えるイメージです。</p>
+              <p>ネット環境があり、相手がアプリを入れていれば使えます。</p>
+              <p>ただしポイント管理のため、アプリ内で現金決済をしてから通常レジ決済をしてください。そうしないとポイントがつきません。</p>
+            </div>
           </details>
           <details>
             <summary>店舗同士の協会的な使い方もできますか？</summary>
-            <p class="faq-a">宅急便ではなく、お花屋さんでイメージを聞いて花屋を探し、頼むことも可能です。発注・受注手数料などは先方とお話ししてください。胡蝶蘭やスタンドなどを含め、大きな金額を取ることは受注先の仕事のポテンシャルを小さくします。お互い納得いく範囲で決めてください。運営側は手数料の金額設定には関与しません。</p>
+            <div class="faq-a">
+              <p>宅急便ではなく、お花屋さんでイメージを聞いて花屋を探し、頼むことも可能です。</p>
+              <p>発注・受注手数料などは先方とお話ししてください。</p>
+              <p>胡蝶蘭やスタンドなどを含め、大きな金額を取ることは受注先の仕事のポテンシャルを小さくします。お互い納得いく範囲で決めてください。</p>
+              <p>運営側は手数料の金額設定には関与しません。</p>
+            </div>
           </details>
         </div>
       </div>
