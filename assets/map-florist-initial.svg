@@ -1,19 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="hıÕíüê¹ÈŞÃ×n;b¤áü¸Çü¿^h:	">
-  <rect width="1200" height="720" fill="#f7f3f8"/>
-  <rect width="1200" height="64" fill="#ffffff"/>
-  <rect y="63" width="1200" height="1" fill="#e5e7eb"/>
-  <rect x="24" y="18" width="28" height="28" rx="6" fill="#ec4899"/>
-  <text x="64" y="32" font-family="sans-serif" font-size="16" font-weight="700" fill="#111827">hıÕíüê¹ÈŞÃ×</text>
-  <text x="64" y="50" font-family="sans-serif" font-size="11" fill="#6b7280">±KnMnÅ1’º</text>
-  <rect x="40" y="96" width="1120" height="560" rx="16" fill="#ffffff"/>
-  <rect x="40" y="96" width="1120" height="72" rx="16" fill="#ffffff"/>
-  <text x="72" y="140" font-family="sans-serif" font-size="16" font-weight="600" fill="#111827">hın±KŞÃ×</text>
-  <rect x="56" y="184" width="1088" height="448" fill="#e8eef2"/>
-  <!-- faint empty map grid, no store markers -->
-  <g stroke="#cfd8df" stroke-width="1" opacity="0.7">
-    <path d="M56 280 H1144 M56 376 H1144 M56 472 H1144 M56 568 H1144"/>
-    <path d="M280 184 V632 M504 184 V632 M728 184 V632 M952 184 V632"/>
-  </g>
-  <text x="600" y="420" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#9ca3af">;b¤áü¸—Çü¿oh:WfD~[“	</text>
-  <text x="600" y="450" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9ca3af">Ÿ›nŞÃ×o¢×êkí°¤óŒk)(gM~Y</text>
-</svg>
